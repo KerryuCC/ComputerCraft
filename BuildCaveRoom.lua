@@ -6,7 +6,7 @@ local roomsize = args[2]
 for i=1,tunneltoroom,1 do
     even = i - math.floor(i/2)*2
 
-    if even == 0 then
+    if even ~= 0 then
         turtle.dig()
         turtle.up()
         turtle.dig()
