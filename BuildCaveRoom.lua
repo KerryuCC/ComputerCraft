@@ -1,7 +1,7 @@
-local args = {}
+local args = {...}
 
-local tunneltoroom = args[0]
-local roomsize = args[1]
+local tunneltoroom = args[1]
+local roomsize = args[2]
 
 print(tunneltoroom)
 print(roomsize)
