@@ -29,6 +29,7 @@ for i=1,tunneltoroom,1 do
     end
 end
 
+print("MY CURRENT Y IS: " .. startY)
 if startY > 0 then
     for i=1,startY,1 do
         turtle.down()
@@ -38,6 +39,7 @@ else
         turtle.up()
     end
 end
+startY = 0
 
 turtle.dig()
 turtle.forward()
@@ -69,6 +71,7 @@ for i=1,roomsize-1,1 do
     end
 end
 
+print("MY CURRENT Y IS: " .. startY)
 if startY > 0 then
     for i=1,startY+1,1 do
         turtle.down()
@@ -78,6 +81,7 @@ else
         turtle.up()
     end
 end
+startY = 0
 
 turtle.turnLeft()
 turtle.dig()
@@ -107,15 +111,18 @@ for i=1,roomsize,1 do
         turtle.forward()
     end
 
+    print("MY CURRENT Y IS: " .. startY)
+
     if startY > 0 then
         for i=1,startY+1,1 do
-            turtle.down()
+           turtle.down()
         end
     else
         for i=startY-1,0,1 do
             turtle.up()
         end
     end
+    startY = 0
 
     if even ~= 0 then
         turtle.turnLeft()
