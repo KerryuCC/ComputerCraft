@@ -101,6 +101,30 @@ turtle.forward()
 for i=1,roomsize+2,1 do
     even = i - math.floor(i/2)*2
 
+    if even ~= 0 then
+        if i == 1 then
+            turtle.turnLeft()
+            turtle.dig()
+            turtle.forward()
+        else
+            turtle.turnRight()
+            turtle.dig()
+            turtle.forward()
+            turtle.turnRight()
+        end
+    else
+        if i == 1 then
+            turtle.turnRight()
+            turtle.dig()
+            turtle.forward()
+        else
+            turtle.turnLeft()
+            turtle.dig()
+            turtle.forward()
+            turtle.turnLeft()
+        end
+    end
+
     for j=1,halfroom,1 do
         evena = j - math.floor(j/2)*2
 
@@ -126,18 +150,6 @@ for i=1,roomsize+2,1 do
 
     ReturnY(startY)
     startY = 0
-
-    if even ~= 0 then
-        turtle.turnLeft()
-        turtle.dig()
-        turtle.forward()
-        turtle.turnLeft()
-    else
-        turtle.turnRight()
-        turtle.dig()
-        turtle.forward()
-        turtle.turnRight()
-    end
 end
 
 -- Do the opposite side here
