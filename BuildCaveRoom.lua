@@ -46,6 +46,7 @@ turtle.forward()
 for i=1,roomheight,1 do
     turtle.digUp()
     turtle.up()
+    startY = startY + roomheight
 end
 
 for i=1,roomsize-1,1 do
