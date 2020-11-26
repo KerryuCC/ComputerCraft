@@ -7,8 +7,6 @@ local roomheight = 3
 
 local startY = 0
 
-print("STEW")
-
 for i=1,tunneltoroom,1 do
     even = i - math.floor(i/2)*2
 
@@ -76,7 +74,7 @@ if startY > 0 then
         turtle.down()
     end
 else
-    for i=startY,0,1 do
+    for i=startY-1,0,1 do
         turtle.up()
     end
 end
@@ -104,17 +102,14 @@ for i=1,roomsize,1 do
                 startY = startY - roomheight
             end
         end
-        
-        turtle.dig()
-        turtle.forward()
     end
 
     if startY > 0 then
-        for i=1,startY,1 do
+        for i=1,startY+1,1 do
             turtle.down()
         end
     else
-        for i=startY,0,1 do
+        for i=startY-1,0,1 do
             turtle.up()
         end
     end
