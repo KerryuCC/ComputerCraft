@@ -7,6 +7,20 @@ local roomheight = 3
 
 local startY = 0
 
+function GoDown()
+    if turtle.detectDown() then
+        turtle.digDown()
+    end
+    turtle.down()
+end
+
+function GoUp()
+    if turtle.detectUp() then
+        turtle.digUp()
+    end
+    turtle.up()
+end
+
 for i=1,tunneltoroom,1 do
     even = i - math.floor(i/2)*2
 
@@ -32,11 +46,11 @@ end
 print("MY CURRENT Y IS: " .. startY)
 if startY > 0 then
     for i=1,startY,1 do
-        turtle.down()
+        GoDown()
     end
 else
     for i=startY,0,1 do
-        turtle.up()
+        GoUp()
     end
 end
 startY = 0
@@ -75,11 +89,11 @@ end
 print("MY CURRENT Y IS: " .. startY)
 if startY > 0 then
     for i=1,startY+1,1 do
-        turtle.down()
+        GoDown()
     end
 else
     for i=startY-1,0,1 do
-        turtle.up()
+        GoUp()
     end
 end
 startY = 0
@@ -116,11 +130,11 @@ for i=1,roomsize,1 do
 
     if startY > 0 then
         for i=1,startY+1,1 do
-           turtle.down()
+           GoDown()
         end
     else
         for i=startY-1,0,1 do
-            turtle.up()
+            GoUp()
         end
     end
     startY = 0
