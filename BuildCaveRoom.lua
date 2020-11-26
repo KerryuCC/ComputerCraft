@@ -135,7 +135,7 @@ for i=1,roomsize,1 do
     else
         turtle.turnRight()
         turtle.dig()
-        turtle.foward()
+        turtle.forward()
         turtle.turnRight()
     end
 end
