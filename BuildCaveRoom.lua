@@ -102,6 +102,9 @@ for i=1,roomsize,1 do
                 startY = startY - roomheight
             end
         end
+
+        turtle.dig()
+        turtle.forward()
     end
 
     if startY > 0 then
