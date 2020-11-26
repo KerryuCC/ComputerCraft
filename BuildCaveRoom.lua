@@ -21,6 +21,20 @@ function GoUp()
     turtle.up()
 end
 
+function ReturnY(yDiff)
+    print("MY CURRENT Y IS: " .. startY)
+
+    if yDiff > roomheight then
+        yDiff = roomheight
+    end
+
+    if yDiff > 0 then
+        for i=1,yDiff,1 do
+            GoDown()
+        end
+    end
+end
+
 for i=1,tunneltoroom,1 do
     even = i - math.floor(i/2)*2
 
@@ -43,16 +57,7 @@ for i=1,tunneltoroom,1 do
     end
 end
 
-print("MY CURRENT Y IS: " .. startY)
-if startY > 0 then
-    for i=1,startY,1 do
-        GoDown()
-    end
-else
-    for i=startY,0,1 do
-        GoUp()
-    end
-end
+ReturnY(startY)
 startY = 0
 
 turtle.dig()
@@ -86,16 +91,7 @@ for i=1,roomsize-1,1 do
     end
 end
 
-print("MY CURRENT Y IS: " .. startY)
-if startY > 0 then
-    for i=1,startY+1,1 do
-        GoDown()
-    end
-else
-    for i=startY-1,0,1 do
-        GoUp()
-    end
-end
+ReturnY(startY)
 startY = 0
 
 turtle.turnLeft()
@@ -128,15 +124,7 @@ for i=1,roomsize,1 do
 
     print("MY CURRENT Y IS: " .. startY)
 
-    if startY > 0 then
-        for i=1,startY+1,1 do
-           GoDown()
-        end
-    else
-        for i=startY-1,0,1 do
-            GoUp()
-        end
-    end
+    ReturnY(startY)
     startY = 0
 
     if even ~= 0 then
