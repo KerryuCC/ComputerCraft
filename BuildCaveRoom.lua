@@ -72,7 +72,7 @@ for i=1,roomsize-1,1 do
 end
 
 if startY > 0 then
-    for i=1,startY,1 do
+    for i=1,startY+1,1 do
         turtle.down()
     end
 else
