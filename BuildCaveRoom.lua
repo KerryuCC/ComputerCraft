@@ -60,14 +60,6 @@ end
 ReturnY(startY)
 startY = 0
 
-turtle.dig()
-turtle.forward()
-for i=1,roomheight,1 do
-    turtle.digUp()
-    turtle.up()
-    startY = startY + roomheight
-end
-
 for i=1,roomsize-1,1 do
     even = i - math.floor(i/2)*2
 
@@ -98,7 +90,7 @@ turtle.turnLeft()
 turtle.dig()
 turtle.forward()
 
-for i=1,roomsize+2,1 do
+for i=1,roomsize,1 do
     even = i - math.floor(i/2)*2
 
     for j=1,halfroom,1 do
